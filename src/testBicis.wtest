@@ -1,5 +1,6 @@
 import bicis.*
 import depositos.*
+import accesorios.*
 
 describe "Ejemplos de bicis" {
 	const bici1 = new Bicicleta(rodado=28, largo=150, marca="Olmo", accesorios = [farolito])

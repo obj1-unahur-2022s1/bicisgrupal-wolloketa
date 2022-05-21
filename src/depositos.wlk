@@ -13,12 +13,5 @@ class Deposito {
 	method cantSinAccesorios() = bicisAlmacenadas.count{ b => b.accesorios().size() == 0 }
 	
 	// 4. Bicis compañeras
-	method bicisCompanierasDe(bici1) = self.todasBicisMenos(bici1).filter{
-		b => b.marca() == bici1.marca() &&
-		b.largo() - bici1.largo() <= 10
-	}
-	
-	method todasBicisMenos(bici1) =
-		if (bicisAlmacenadas.contains(bici1)) bicisAlmacenadas.remove(bici1)
-		else bicisAlmacenadas 
+	method bicisCompanierasDe(bici1) = bicisAlmacenadas.filter{ b => b.esCompanieraDe(bici1) }
 }

@@ -13,31 +13,10 @@ class Bicicleta {
 	method pesoTotalAccesorios() = accesorios.sum{ a => a.peso()}
 	method tieneLuz() = accesorios.any{ a => a.esLuminoso()}
 	method cantAccesoriosLivianos() = accesorios.count{ a => a.peso() < 1}
-	method esCompanieraDe(otraBici) = self.marca() == otraBici.marca() &&
-									  self.largo() - otraBici.largo() <= 10
-}
-
-// Accesorios
-
-object farolito {
-	method peso() = 0.5
-	method carga() = 0
-	method esLuminoso() = true
-}
-
-object canasto {
-	var property volumen = 0
-	
-	method peso() = volumen*0.1
-	method carga() = volumen *2
-	method esLuminoso() = false
-}
-
-object morralDeBici {
-	var property largo = 0
-	var property tieneOjoDeGato = false
-	
-	method peso() = 1.2
-	method carga() = largo/3
-	method esLuminoso() = tieneOjoDeGato
+	method esCompanieraDe(otraBici) = 
+		if (otraBici == self) {false}
+		else {
+			self.marca() == otraBici.marca() &&
+			self.largo() - otraBici.largo() <= 10
+		}
 }
