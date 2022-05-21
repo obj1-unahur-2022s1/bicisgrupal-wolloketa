@@ -58,7 +58,7 @@ test "Test depósito 1" {
 	
 	assert.equals([bici1,bici2], deposito1.bicisRapidas())
 	assert.equals(#{"Olmo","Legnano"}, deposito1.marcas())
-	assert.notThat(deposito1.esNocturno()) // → No funca
+	assert.notThat(deposito1.esNocturno())
 	assert.that(deposito1.tieneBiciParaLlevar(10))
 	assert.notThat(deposito1.tieneBiciParaLlevar(50))
 	}
