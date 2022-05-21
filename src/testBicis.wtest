@@ -4,9 +4,7 @@ import accesorios.*
 
 describe "Ejemplos de bicis" {
 	const bici1 = new Bicicleta(rodado=28, largo=150, marca="Olmo", accesorios = [farolito])
-	const bici2 = new Bicicleta(
-		rodado=26, largo=110, marca="Legnano", accesorios = [farolito, canasto, morralDeBici]
-	)
+	const bici2 = new Bicicleta(rodado=26, largo=110, marca="Legnano", accesorios = [farolito, canasto, morralDeBici])
 	const bici3 = new Bicicleta(rodado=20, largo=90, marca="Legnano", accesorios = [morralDeBici])
 	
 	const deposito1 = new Deposito(bicisAlmacenadas=[bici1, bici2, bici3])
@@ -20,6 +18,7 @@ describe "Ejemplos de bicis" {
 	
 	method bici3() {
 		morralDeBici.largo(6)
+		morralDeBici.tieneOjoDeGato(false)
 	}
 
 test "Bici 1" {
@@ -59,7 +58,7 @@ test "Test depósito 1" {
 	
 	assert.equals([bici1,bici2], deposito1.bicisRapidas())
 	assert.equals(#{"Olmo","Legnano"}, deposito1.marcas())
-	// assert.notThat(deposito1.esNocturno())  → No funca
+	assert.notThat(deposito1.esNocturno()) // → No funca
 	assert.that(deposito1.tieneBiciParaLlevar(10))
 	assert.notThat(deposito1.tieneBiciParaLlevar(50))
 	}
