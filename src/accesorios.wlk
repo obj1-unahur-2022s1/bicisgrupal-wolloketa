@@ -4,7 +4,7 @@ object farolito {
 	method esLuminoso() = true
 }
 
-object canasto {
+class Canasto {
 	var property volumen = 0
 	
 	method peso() = volumen*0.1
@@ -12,7 +12,7 @@ object canasto {
 	method esLuminoso() = false
 }
 
-object morralDeBici {
+class MorralDeBici {
 	var property largo = 0
 	var property tieneOjoDeGato = false
 	

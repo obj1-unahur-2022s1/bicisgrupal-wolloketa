@@ -1,0 +1,41 @@
+import depositos.*
+import accesorios.*
+import bicis.*
+
+
+describe "Ejemplos de bicis" {
+	const bici1 = new Bicicleta(rodado=28, largo=150, marca="Legnano", accesorios = [new Canasto(volumen=8)])
+	const bici2 = new Bicicleta(rodado=26, largo=145, marca="Legnano", accesorios = [new Canasto(volumen=8), new MorralDeBici(largo=21, tieneOjoDeGato=true)])
+	const bici3 = new Bicicleta(rodado=20, largo=140, marca="Legnano", accesorios = [farolito])
+	const bici4 = new Bicicleta(rodado=20, largo=135, marca="Legnano", accesorios = [farolito])
+	const bici5 = new Bicicleta(rodado=20, largo=130, marca="Legnano", accesorios = [farolito])
+	
+	const deposito1 = new Deposito(bicisAlmacenadas=[bici1, bici2, bici3, bici4, bici5])
+	
+	method parDeBicisEnPosicionDeLista (indice, lista) {
+		const parejita = []
+		parejita.add(lista.parejasDeCompanieras().get(indice).primeraBici())
+		parejita.add(lista.parejasDeCompanieras().get(indice).segundaBici())
+		
+		return parejita
+	}
+	
+test "Hay compañeras" {
+	assert.that(deposito1.hayCompanieras())
+}
+
+test "Parejas de compañeras" {
+	assert.equals( [bici1, bici2], self.parDeBicisEnPosicionDeLista(0, deposito1) )
+	assert.equals( [bici1, bici3], self.parDeBicisEnPosicionDeLista(1, deposito1) )
+	assert.equals( [bici2, bici3], self.parDeBicisEnPosicionDeLista(2, deposito1) )
+	assert.equals( [bici2, bici4], self.parDeBicisEnPosicionDeLista(3, deposito1) )
+	assert.equals( [bici3, bici4], self.parDeBicisEnPosicionDeLista(4, deposito1) )
+	assert.equals( [bici3, bici5], self.parDeBicisEnPosicionDeLista(5, deposito1) )
+	assert.equals( [bici4, bici5], self.parDeBicisEnPosicionDeLista(6, deposito1) )
+}
+
+test "Se hizo la luz" {
+	assert.that(deposito1.seHizoLaLuz())
+}
+
+}

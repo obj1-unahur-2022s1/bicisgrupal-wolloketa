@@ -4,7 +4,6 @@ class Bicicleta {
 	const property marca
 	const property accesorios = []
 	
-	//method agregarAccesorio(unAccesorio) { accesorios.add(unAccesorio) }
 	method altura() = rodado *2.5 + 15
 	method velocidadDeCrucero() = if(largo>120) rodado +6
 								  else rodado +2
@@ -17,6 +16,11 @@ class Bicicleta {
 		if (otraBici == self) {false}
 		else {
 			self.marca() == otraBici.marca() &&
-			self.largo() - otraBici.largo() <= 10
+			(self.largo() - otraBici.largo()).abs() <= 10 
 		}
+}
+
+class ParDeBicis {
+	const property primeraBici
+	const property segundaBici
 }
