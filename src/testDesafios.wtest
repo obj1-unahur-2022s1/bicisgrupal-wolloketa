@@ -12,10 +12,10 @@ describe "Ejemplos de bicis" {
 	
 	const deposito1 = new Deposito(bicisAlmacenadas=[bici1, bici2, bici3, bici4, bici5])
 	
-	method parDeBicisEnPosicionDeLista (indice, lista) {
+	method parDeBicisEnPosicionDeLista (indice, deposito) {
 		const parejita = []
-		parejita.add(lista.parejasDeCompanieras().get(indice).primeraBici())
-		parejita.add(lista.parejasDeCompanieras().get(indice).segundaBici())
+		parejita.add(deposito.parejasDeCompanieras().get(indice).primeraBici())
+		parejita.add(deposito.parejasDeCompanieras().get(indice).segundaBici())
 		
 		return parejita
 	}
