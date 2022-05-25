@@ -23,8 +23,7 @@ class MorralDeBici {
 
 /* 5. Una pregunta
  * 
- * Para agregar nuevos accesorios habría que definir nuevos objetos que los representen,
- * que entiendan por lo menos los mensajes peso(), carga() y esLuminoso(), para respetar
- * el polimorfismo.
+ * Para agregar nuevos accesorios habría que definir nuevas clases (u objetos según el caso) que los representen,
+ * que entiendan por lo menos los mensajes peso(), carga() y esLuminoso(), para respetar el polimorfismo.
  * 
  */
