@@ -21,7 +21,7 @@ class MorralDeBici {
 	method esLuminoso() = tieneOjoDeGato
 }
 
-/* 5. Una pregunta
+/* 5. Una pregunta...
  * 
  * Para agregar nuevos accesorios habría que definir nuevas clases que los representen,
  * que entiendan por lo menos los mensajes peso(), carga() y esLuminoso(), para respetar el polimorfismo.
