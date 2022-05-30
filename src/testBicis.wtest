@@ -3,8 +3,8 @@ import depositos.*
 import accesorios.*
 
 describe "Ejemplos de bicis" {
-	const bici1 = new Bicicleta(rodado=28, largo=150, marca="Olmo", accesorios = [farolito])
-	const bici2 = new Bicicleta(rodado=26, largo=110, marca="Legnano", accesorios = [farolito, new Canasto(volumen=8), new MorralDeBici(largo=21, tieneOjoDeGato=true)])
+	const bici1 = new Bicicleta(rodado=28, largo=150, marca="Olmo", accesorios = [new Farolito()])
+	const bici2 = new Bicicleta(rodado=26, largo=110, marca="Legnano", accesorios = [new Farolito(), new Canasto(volumen=8), new MorralDeBici(largo=21, tieneOjoDeGato=true)])
 	const bici3 = new Bicicleta(rodado=20, largo=90, marca="Legnano", accesorios = [new MorralDeBici(largo=6, tieneOjoDeGato=false)])
 	
 	const deposito1 = new Deposito(bicisAlmacenadas=[bici1, bici2, bici3])

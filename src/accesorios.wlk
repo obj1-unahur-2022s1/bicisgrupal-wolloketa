@@ -1,4 +1,4 @@
-object farolito {
+class Farolito {
 	method peso() = 0.5
 	method carga() = 0
 	method esLuminoso() = true
@@ -23,7 +23,7 @@ class MorralDeBici {
 
 /* 5. Una pregunta
  * 
- * Para agregar nuevos accesorios habría que definir nuevas clases (u objetos según el caso) que los representen,
+ * Para agregar nuevos accesorios habría que definir nuevas clases que los representen,
  * que entiendan por lo menos los mensajes peso(), carga() y esLuminoso(), para respetar el polimorfismo.
  * 
  */
